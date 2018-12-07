@@ -1,11 +1,14 @@
 package com.sms;
 
+import java.util.ArrayList;
 
 public class ObjectiveType extends Base {
 
+	public static ArrayList<ObjectiveType> ObjTypeList = new ArrayList<ObjectiveType>();
+
 // common attributes 
-	String name;
-	int creation_date;
+	 String name;
+	 int creation_date;
 	int updated_date;
 	String active;
 
@@ -21,7 +24,7 @@ public class ObjectiveType extends Base {
 		this.attribute_list = attribute_list;
 
 	}
-
+//print method
 	public void printObjectiveType() {
 		
 		System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
