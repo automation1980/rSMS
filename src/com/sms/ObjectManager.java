@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.ArrayList;
 
 public class ObjectManager {
-
+public static int size;
 	public static void main(String[] args) {
 		operations();
 		add();
@@ -20,21 +20,23 @@ public class ObjectManager {
 	
 	}
 
-	public void add() {
+	public static void add() {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Select your operation: ");
 		
 		int operation1 = input.nextInt();
+		
 		switch (operation1) {
 		case 1:
 			operation1 = 1;
-						
+			ArrayList<ObjectiveType> ObjTypeList = new ArrayList<ObjectiveType>();
+			
 			System.out.println("How many objects would you like to create: ");
 			int ques1 = input.nextInt();
-
+			
 		
 			System.out.println("Enter String name?");
-			String ques2 = input.toString();
+			String ques2 = input.next();
 			
 			System.out.println("Enter creation date?");
 			int ques3 = input.nextInt();
@@ -45,21 +47,20 @@ public class ObjectManager {
 			
 			
 			System.out.println("Enter active?");
-			int ques5 = input.nextInt();
+			String ques5 = input.next();
 			
 			
 			System.out.println("Enter Creator Name?");
-			int ques6 = input.nextInt();
+			String ques6 = input.next();
 			
 			
 			System.out.println("Enter Attribute list?");
-			int ques7 = input.nextInt();
+			String ques7 = input.next();
 			
-			//
-			
-		
+			System.out.println("This is size of an Array: " + ObjTypeList.size());
+			for (int i =0; i < ObjTypeList.size(); i++) {
+			System.out.println("Printing" + i + ObjTypeList.get(i));
+			}
 		}
-
 	}
-
 }

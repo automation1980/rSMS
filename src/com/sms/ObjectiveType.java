@@ -1,5 +1,6 @@
 package com.sms;
 
+
 public class ObjectiveType extends Base {
 
 // common attributes 
