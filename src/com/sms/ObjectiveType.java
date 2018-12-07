@@ -6,12 +6,6 @@ public class ObjectiveType extends Base {
 
 	public static ArrayList<ObjectiveType> ObjTypeList = new ArrayList<ObjectiveType>();
 
-// common attributes 
-	 String name;
-	 int creation_date;
-	int updated_date;
-	String active;
-
 //uncommon 
 	String creator_name;
 	String attribute_list;
@@ -27,8 +21,7 @@ public class ObjectiveType extends Base {
 //print method
 	public void printObjectiveType() {
 		
-		System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
-				+ "creator_name" + "\t" + "attribute_list");
+		
 		System.out.println(name + "\t" + "\t" + creation_date + "\t" + "\t" + updated_date + "\t" + active 
 				+ "\t" + creator_name + "\t" + attribute_list);
 
