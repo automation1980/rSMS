@@ -22,8 +22,8 @@ public class ObjectiveType extends Base {
 	public void printObjectiveType() {
 		
 		
-		System.out.println(name + "\t" + "\t" + creation_date + "\t" + "\t" + updated_date + "\t" + active 
-				+ "\t" + creator_name + "\t" + attribute_list);
+		System.out.println(name + "\t" + "\t" + creation_date + "\t" + "\t" + updated_date + "\t" + active + "\t" 
+				+ "\t" + creator_name + "\t" + "\t" + attribute_list);
 
 	}
 }

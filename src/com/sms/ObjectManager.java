@@ -1,5 +1,4 @@
 package com.sms;
-import java.util.ArrayList;
 import java.util.*;
 public class ObjectManager 
 {
@@ -27,14 +26,15 @@ public class ObjectManager
 			case 1:
 				add();
 				break;
+				
+			case 2: 
+				read();
+				break;
 			case 5:
 				System.out.println("Program ended, bye!!!");
 				input.close();
 				break;
 		}
-		
-		
-
 	}
 
 	public static void add() 
@@ -79,5 +79,20 @@ public class ObjectManager
 		}
 		operations();
 	}
+		public static void read() 
+		{
+		System.out.println("what index would you like to print out: ");
+		int readindex  = input.nextInt();
+			
+			for (int g = 0; g < readindex; g++) 
+			{
+				System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
+						+ "creator_name" + "\t" + "attribute_list");
+				ObjTypeList.get(g).printObjectiveType();
+			}
+		
+		
+		}
 }
+
 
