@@ -46,7 +46,8 @@ public class ObjectManager
 	{
 		System.out.println("How many objects would you like to create: ");
 		int index = input.nextInt();
-	
+		
+		int rowIndex = ObjTypeList.size();
 		for (int j = 0; j < index; j++)
 		{
 			System.out.println("Enter data for Objective Type at index: " + (j+1));
@@ -70,14 +71,15 @@ public class ObjectManager
 			String attList = input.next();
 			
 			ObjectiveType obj = new ObjectiveType(name, createDate, updateDate, active, creatorName, attList);
-			ObjTypeList.add(j, obj);
+			ObjTypeList.add(rowIndex, obj);
+			rowIndex = rowIndex+1;
 		}
 		
 		if(index>0)
 		{
 			System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
 					+ "creator_name" + "\t" + "attribute_list");
-			for (int i = 0; i < index; i++) 
+			for (int i = 0; i < ObjTypeList.size(); i++) 
 			{
 				ObjTypeList.get(i).printObjectiveType();
 			}
@@ -104,6 +106,7 @@ public class ObjectManager
 				{
 					ObjTypeList.get(g).printObjectiveType();
 				}
+				System.out.println("******************************************************************");
 				break;
 			case 2:
 				System.out.println("Enter index to read: ");
@@ -115,6 +118,7 @@ public class ObjectManager
 					System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
 								+ "Creator_name" + "\t" + "Attribute_list");
 					ObjTypeList.get(readIndex-1).printObjectiveType();
+					System.out.println("******************************************************************");
 				}
 				break;
 			}
@@ -178,8 +182,44 @@ public class ObjectManager
 		
 		operations();
 	}
-	public static void delete() {
-		
+	public static void delete() 
+	{
+		if(ObjTypeList.size()>0)
+		{
+			System.out.println("Number of rows in list: " + ObjTypeList.size());
+			System.out.println("Select your delete operation option: ");
+			System.out.println("Press 1: Delete All");
+			System.out.println("Press 2: Delete specific index");
+			System.out.println("******************************************************************");
+			int deleteOption = input.nextInt();
+			switch(deleteOption)
+			{
+				case 1:
+					int listSize = ObjTypeList.size();
+					
+					for (int g = 0; g < listSize; g++) 
+					{
+						ObjectiveType removeObj = ObjTypeList.get(0);
+						ObjTypeList.remove(removeObj);
+					}
+					break;
+				case 2:
+					System.out.println("Enter index to delete: ");
+					int deleteIndex = input.nextInt();
+					if(deleteIndex <= 0 || deleteIndex > ObjTypeList.size())
+						System.out.println("Invalid Index");
+					else
+					{
+						ObjectiveType removeObj = ObjTypeList.get(deleteIndex-1);
+						ObjTypeList.remove(removeObj);
+					}
+					break;
+			}
+		}
+		else
+			System.out.println("There are no rows in the list");
+
+		operations();
 	}
 
 }
