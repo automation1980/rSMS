@@ -30,6 +30,9 @@ public class ObjectManager
 			case 2: 
 				read();
 				break;
+			case 3:
+				update();
+				break;
 			case 5:
 				System.out.println("Program ended, bye!!!");
 				input.close();
@@ -84,15 +87,26 @@ public class ObjectManager
 		System.out.println("what index would you like to print out: ");
 		int readindex  = input.nextInt();
 			
-			for (int g = 0; g < readindex; g++) 
+			for (int g = 0 ; g < readindex; g++) 
 			{
 				System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
 						+ "creator_name" + "\t" + "attribute_list");
+				
 				ObjTypeList.get(g).printObjectiveType();
+				
 			}
-		
+			
+		}
+	
+			public static void update()
+		{
+				
+			System.out.println("What index would you like to update: ");
+			int readindex = input.nextInt(); 
+			
+			
+		}
 		
 		}
-}
 
 
