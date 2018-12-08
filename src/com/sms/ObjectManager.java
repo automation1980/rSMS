@@ -25,8 +25,7 @@ public class ObjectManager
 		{
 			case 1:
 				add();
-				break;
-				
+				break;			
 			case 2: 
 				read();
 				break;
@@ -82,31 +81,46 @@ public class ObjectManager
 		}
 		operations();
 	}
-		public static void read() 
-		{
-		System.out.println("what index would you like to print out: ");
-		int readindex  = input.nextInt();
-			
-			for (int g = 0 ; g < readindex; g++) 
-			{
-				System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
-						+ "creator_name" + "\t" + "attribute_list");
-				
-				ObjTypeList.get(g).printObjectiveType();
-				
-			}
-			
-		}
-	
-			public static void update()
-		{
-				
-			System.out.println("What index would you like to update: ");
-			int readindex = input.nextInt(); 
-			
-			
-		}
-		
-		}
 
+	public static void read() {
+		System.out.println("what index would you like to print out: ");
+		int readindex = input.nextInt();
+
+		for (int g = 0; g < readindex; g++) {
+			System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
+					+ "Creator_name" + "\t" + "Attribute_list");
+			ObjTypeList.get(g).printObjectiveType();
+
+		}
+		operations();
+	}
+	
+	public static void update() 
+	{
+	
+		System.out.println("What index would you like to update: ");
+		int readindex = input.nextInt();
+		System.out.println("Name" + "\t" + "Creation_date" + "\t" + "Updated_date" + "\t" + "Active" + "\t"
+				+ "Creator_name" + "\t" + "Attribute_list");
+			
+		switch (readindex) {
+		case 0:			
+			ObjTypeList.get(0).printObjectiveType();
+			System.out.println("What element would you like to change: ");
+			int element = input.nextInt();			
+		break;
+		
+		
+		case 1:			
+			ObjTypeList.get(1).printObjectiveType();	
+			System.out.println("What element would you like to change: ");
+		 	int element1 = input.nextInt();		 	
+		 
+	 	break;
+	 	
+		}
+		operations();
+	}
+
+}
 
