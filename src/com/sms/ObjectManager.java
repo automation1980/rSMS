@@ -9,7 +9,7 @@ public class ObjectManager
 
 	public static void operations() 
 	{
-		int userinput;
+		int userInput;
 		
 		System.out.println("");
 		System.out.println("Select your operation: ");
@@ -19,9 +19,9 @@ public class ObjectManager
 		System.out.println("Press 4: Delete");
 		System.out.println("Press 5: Exit");
 		System.out.println("******************************************************************");
-		userinput = input.nextInt();
+		userInput = input.nextInt();
 		
-		switch(userinput) 
+		switch(userInput) 
 		{
 			case 1:
 				add();
@@ -38,6 +38,10 @@ public class ObjectManager
 			case 5:
 				System.out.println("Program ended, bye!!!");
 				input.close();
+				break;
+			default:
+				System.out.println("Enter valid operation number");
+				operations();
 				break;
 		}
 	}
@@ -97,6 +101,7 @@ public class ObjectManager
 			System.out.println("Press 2: Read specific index");
 			System.out.println("******************************************************************");
 			int readOption = input.nextInt();
+						
 			switch(readOption)
 			{
 			case 1:
@@ -121,6 +126,10 @@ public class ObjectManager
 					System.out.println("******************************************************************");
 				}
 				break;
+			default:
+				System.out.println("Enter valid read operation number");
+				read();
+				break;
 			}
 		}
 		else
@@ -140,6 +149,12 @@ public class ObjectManager
 			
 		System.out.println("What index would you like to update: ");
 		int updateIndex = input.nextInt();
+		
+		if(updateIndex< 1 || updateIndex>ObjTypeList.size())
+		{
+			System.out.println("Select enter valid index");
+			update();
+		}
 		
 		ObjectiveType obj = ObjTypeList.get(updateIndex-1);
 		ObjTypeList.get(updateIndex-1).printObjectiveType();
@@ -172,6 +187,10 @@ public class ObjectManager
 			case 6:
 				System.out.println("Enter new/updated attribute list: ");
 				obj.attribute_list= input.next();
+				break;
+			default:
+				System.out.println("Invalid index value for element");
+				update();
 				break;
 		}
 		ObjTypeList.set(updateIndex-1, obj);
@@ -213,6 +232,10 @@ public class ObjectManager
 						ObjectiveType removeObj = ObjTypeList.get(deleteIndex-1);
 						ObjTypeList.remove(removeObj);
 					}
+					break;
+				default:
+					System.out.println("Enter valid delete operation option");
+					delete();
 					break;
 			}
 		}
